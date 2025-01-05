@@ -1,0 +1,31 @@
+--"FastPhayjoe" by Phayjoe----------------------  
+base   = 0.00023  
+pilose = 1.1  
+palose = 1.19  
+polose = 1.160  
+pwin   = 1.08  
+target = base*10  
+opit   = 50 
+lose   = 900000.1010001  
+speeds = 0.0  
+--Randomizer--chance-----------------------------  
+A1 = 98 B1 = 98 A2 = 36 B2 = 46  
+  
+A3 = 25 B3 = 44 A4 = 13 B4 = 43  
+  
+A5 = 10.1 B5 = 25 A6 = 25 B6 = 35  
+--------------------------------------------------  
+tmpprofit = 0  
+invprofit = 0  
+wincount  = 0  
+randm     = true  
+nextbet   = base  
+invtarget = target  
+stopnow   = false  
+tprofit   = balance+opit  
+cutlose   = balance-lose  
+chance    = math.random(97,98)  
+--------------------------------------------------  
+--resetseed ()  
+resetstats() 
+resetchart()
