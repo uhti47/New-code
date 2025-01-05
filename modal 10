@@ -1,0 +1,68 @@
+basebet = 0.00001
+evnlose = 1.07
+oddlose = 1.0   --(sett 1.0 aja)
+piwinss = 1.00  --(sett terserah)
+piloses = 1.0   --(sett 1.0 aja)
+lossatu = 0.01  --(sett max 0.01 aja)
+chrange = {0.01,98}
+chuse   = {0.26,1.5}
+chance  = chrange[2]
+nextbet = basebet
+
+
+recbal = balance - 0.25
+maxbal = balance + 1.5
+minbal = balance - 0.3
+
+--------------------------------------------------
+--resetseed()
+resetchart()
+resetstats() 
+
+function dobet()
+    -- bethigh   = math.random(11)%2 == 0
+    if win then
+        if partialprofit > 0 then
+            chance  = chrange[2]
+            nextbet = basebet
+            resetpartialprofit()
+        else
+            chance  = chrange[2] -- 0.025
+            nextbet = previousbet * piwinss
+        end
+    else
+        streak = math.abs(currentstreak)
+        if (streak == 1) then
+            chance  = chuse[1]
+            nextbet = previousbet * lossatu
+        else
+            if (streak > 10 and streak > 450) then
+                chance = chance + 0.025
+            else
+                chance = chance - 0.025
+            end
+
+            if (streak%2 == 0) then 
+                nextbet = previousbet * oddlose
+            else
+                nextbet = previousbet * evnlose
+            end
+
+            if (streak > 600) then
+                nextbet = previousbet * piloses
+            end
+
+            if (chance < chrange[1]) then
+                chance = chuse[2]
+            end
+        end
+
+        if balance < recbal then
+            nextbet = previousbet * piloses
+        end
+
+    end
+    if balance > maxbal then stop() end
+    if balance - nextbet < minbal then pause() end
+    nextbet = math.max(nextbet,1e-8)
+end
