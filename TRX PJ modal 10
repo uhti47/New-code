@@ -9,7 +9,7 @@ palose = 1.05+(1/((95/chance)-1))
   
 polose = 1.05+(1/((95/chance)-1))  
   
-pwin = .8
+pwin = .3
   
 target = base*0.10001  
   
