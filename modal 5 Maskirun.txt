@@ -1,5 +1,5 @@
 --"FastPhayjoe" by @Phayjoe----------------------
-basebet = 0.01
+basebet = 0.0001
 piloses = 1.0  --(sett 1.0 aja)
 paloses = 1.07 
 pploses = 1.0  --(sett 1.0 aja)
