@@ -1,4 +1,4 @@
-base      = 50 
+base      = 5
 if_lose   = 1.19
 if_win    = 1.0 
 if_profit = 0.1 
