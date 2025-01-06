@@ -1,0 +1,32 @@
+basebet = balance/1e5
+multi   = 1.3 
+profitc = 0 
+nextbet = basebet 
+chance  = 50 
+ 
+resetstats() 
+function dobet() 
+    if balance > 1e6 then stop() end
+    profitc += currentprofit 
+    if profitc > 0 then 
+        if wins%16==0 then
+            bethigh = not bethigh
+            resetseed()
+        end
+        profitc = 0 
+        chance  = math.random(110,200)/10  
+        nextbet = basebet 
+    else 
+        if win then 
+            nextbet = previousbet * 0.6
+        else
+            chance += 0.0025
+            streak  = math.abs(currentstreak) 
+            payout  = 99/chance 
+            nextbet = previousbet * (1 +(chance*0.02))  
+            if streak > math.ceil(payout*3) then 
+                nextbet = math.abs(profitc)/(payout-1)
+            end 
+        end 
+    end 
+end
