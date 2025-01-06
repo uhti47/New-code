@@ -1,7 +1,7 @@
 chance  = 55
 iflose  = 1.05+(1/((95/chance)-1))
 ifwin   = 0.82
-basebet = 0.1
+basebet = 0.0082
 nextbet = basebet
 
 
