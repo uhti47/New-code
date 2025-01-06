@@ -1,0 +1,31 @@
+basebet = 0.001
+nextbet = basebet
+chance  = 30  -- Increased chance for a higher probability of winning
+bethigh = true
+tprofit = 10
+stoploss = -5  -- Set a limit for acceptable losses
+currentprofit = 0
+
+function dobet()
+  if win then
+    nextbet = previousbet * 5  -- Use a smaller multiplier to mitigate losses
+    chance  = math.random(25, 35)  -- Adjusted chance range for higher win probability
+    bethigh = false
+  else
+    nextbet = basebet
+    chance  = math.random(15, 25)
+    bethigh = not bethigh
+  end
+
+  if currentprofit > tprofit then
+    stop()  -- Stop if target profit is reached
+  elseif currentprofit < stoploss then
+    stop()  -- Stop if the stop-loss limit is reached
+  end
+
+  if currentstreak % 5 == 0 then
+    nextbet = basebet
+    chance  = math.random(10, 15)  -- Adjusted chance range to keep the strategy dynamic
+    bethigh = not bethigh
+  end
+end
