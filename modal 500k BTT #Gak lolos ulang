@@ -1,0 +1,24 @@
+base      = 50 
+if_lose   = 1.19
+if_win    = 1.0 
+if_profit = 0.1 
+nextbet   = base 
+chance    = 86 
+tp        = balance * 1.9 
+resetstats() 
+resetchart() 
+resetseed() 
+function dobet() 
+    if win then 
+       print("NYICIL PAJERO")  
+        nextbet = previousbet * if_win 
+    else 
+        nextbet = previousbet * if_lose 
+    end 
+    if profit > if_profit then  
+        if_profit = profit 
+        nextbet   = base 
+    end 
+    if balance > tp then stop () end 
+    chance = math.random(99,12000)/1000 
+end
