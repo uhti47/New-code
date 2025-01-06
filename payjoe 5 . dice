@@ -1,19 +1,19 @@
 --"FastPhayjoe" by Phayjoe----------------------  
-base   = 0.00023  
-pilose = 1.1  
+base   = 0.0023  
+pilose = 1.3  
 palose = 1.19  
 polose = 1.160  
-pwin   = 1.08  
-target = base*10  
+pwin   = 1.03 
+target = base*0.002 
 opit   = 50 
 lose   = 900000.1010001  
 speeds = 0.0  
 --Randomizer--chance-----------------------------  
-A1 = 98 B1 = 98 A2 = 36 B2 = 46  
+A1 = 98 B1 = 98 A2 = 0.0186 B2 = 46  
   
-A3 = 25 B3 = 44 A4 = 13 B4 = 43  
+A3 = 25 B3 = 44 A4 = 20.13 B4 = 43  
   
-A5 = 10.1 B5 = 25 A6 = 25 B6 = 35  
+A5 = 0.1 B5 = 55 A6 = 25 B6 = 48.35
 --------------------------------------------------  
 tmpprofit = 0  
 invprofit = 0  
