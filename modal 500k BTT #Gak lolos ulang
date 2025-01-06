@@ -1,7 +1,7 @@
 base      = 5
 if_lose   = 1.19
 if_win    = 1.0 
-if_profit = 0.1 
+if_profit = 0.0001 
 nextbet   = base 
 chance    = 86 
 tp        = balance * 1.9 
