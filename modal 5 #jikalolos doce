@@ -1,0 +1,72 @@
+basebet = 0.00005
+payouts = {11,14} --{15,17} 
+modulus = 1
+incrmnt = 25.6 -- 16.6 
+maxdrop = 0
+maxlose = 0
+target  = balance*1.025
+
+nextbet   = basebet 
+chance    = 99/payouts[1]
+balhigh   = balance
+baldrop   = 0
+losecount = 0 
+stopwin   = false
+  
+function dobet() 
+    bethigh = math.random(99)%2 > 0
+    if win then 
+        losecount = 0 
+        nextbet   = basebet  
+        chance    = 99/math.random(payouts[1],payouts[2]) 
+    else 
+        losecount = losecount+1 
+        chance    = adjust(chance,-1.5)
+        if losecount%modulus == 0 then
+            nextbet = adjust(previousbet,incrmnt)
+        end
+    end 
+ 
+    if (losecount%25==0 and losecount > 0) then 
+        chance = adjust(chance,15)
+    end 
+ 
+    if (losecount == 35) then  
+        chance = adjust(chance,50)
+    end 
+ 
+    if (losecount == 45) then  
+        chance = adjust(chance,45)
+    end 
+ 
+    if (losecount == 55) then  
+        chance = adjust(chance,45)
+    end 
+ 
+    if balance > target then stop() end 
+
+    if partialprofit > 0 then
+        resetpartialprofit()
+        if stopwin then stop() end
+    end
+    balhigh = math.max(balhigh,balance)
+    baldrop = math.min(baldrop,partialprofit)
+    
+    if partialprofit/balhigh*-100 > maxdrop and maxdrop > 0 then
+        nextbet = partialprofit/((99/chance)-1)*-1.01
+        stopwin = true
+    end
+
+    if losecount > maxlose and maxlose > 0 then
+        nextbet = partialprofit/((99/chance)-1)*-1.01
+        stopwin = true
+    end
+    
+    print(string.format("++  [ %.8f ]  [ %.2f ]",baldrop*-1,baldrop/balhigh*-100))
+    
+end
+
+
+function adjust(x,y)
+    return x+(x*(y/100))
+end
