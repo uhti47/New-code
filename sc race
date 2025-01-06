@@ -1,0 +1,65 @@
+chance  = 55
+iflose  = 1.05+(1/((95/chance)-1))
+ifwin   = 0.82
+basebet = 0.1
+nextbet = basebet
+
+
+lv = 0
+lx = 0
+
+resetseed()
+function dobet()
+    if partialprofit > 0 then
+        resetpartialprofit()
+        nextbet = basebet
+        if sw then
+            sw = false
+            basebet *= 0.8
+            if basebet < 0.1 then
+                stop()
+                start()
+            else
+                resetseed()
+            end
+        end
+        lv = 0
+    else
+        if win then
+            nextbet = previousbet * ifwin
+            
+            lv += 1
+        else
+            nextbet = previousbet * iflose
+            if currentstreak%10 == 0 then
+                bethigh = not bethigh
+                chance  = math.random(500,2000)/100
+            else
+                chance = 55
+            end
+
+            ls = math.min(ls,currentstreak)
+        end
+    end
+    nextbet = math.max(nextbet,basebet)
+    
+    bd = math.min(bd,partialprofit)
+    bh = math.max(bh,balance)
+    lx = math.max(lx,lv)
+    
+    print(string.format("++ %d / %d  %d  %.8f  %.2f  %.2f  [ %.2f ]",lx,lv,ls*-1,bd*-1,bd/bh*-100,(balance-bi)/bi*100,profit/bh*100))
+    
+    if lv > 3 then
+        nextbet = partialprofit/((95/chance)-1)*-1.01
+        
+        sw = true
+    end
+    if bd/bh*-100 > 10 then
+        sw = true
+    end
+end
+bd = 0
+bh = balance
+sw = false
+bi = balance
+ls = 0 
