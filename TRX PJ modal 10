@@ -1,7 +1,7 @@
 
 --Payjo versi 
 --Kanakamaya: 
-base = 0.1020000001498975 
+base = 0.001020000001498975 
   
 pilose = 1.05+(1/((95/chance)-1)) 
   
