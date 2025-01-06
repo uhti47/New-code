@@ -1,0 +1,2496 @@
+--"FastPhayjoe" by @Phayjoe----------------------
+basebet = 0.01
+piloses = 1.0  --(sett 1.0 aja)
+paloses = 1.07 
+pploses = 1.0  --(sett 1.0 aja)
+piwinss = 1.00 --(sett terserah)
+lossatu = 0.01 --(sett max 0.01 aja)
+targets = basebet*0.0
+propits = 1000
+loosess = 4000
+wahloss = basebet*10000000000 --(jika tidak pakai sett x banyak)
+--Randomizer--chance-----------------------------
+minchance = 0.01 --(jangan di ubah)
+maxchance = 98  --(sesuaikan aja)
+minuschan = 0.025
+chance1   = 0.26
+chance2   = 1.5
+--------------------------------------------------
+randoms   = true
+tmpprofit = 0
+invprofit = 0
+wincount  = 0
+nextbet   = basebet
+invtarget = targets
+stopnow   = false
+tprofit   = balance+propits
+cutlose   = balance-loosess
+recovered = balance-wahloss
+chance    = maxchance
+--------------------------------------------------
+--resetseed()
+resetchart() 
+resetstats()
+
+function dobet()
+------------------------------------------------
+if r == 1 then
+    bethigh = false
+else
+     bethigh = randoms
+end
+-------Randomly select High/Low------------------
+----bethigh = math.random(2)> 1.0
+-------------------------------------------------
+tmpprofit += currentprofit
+invprofit += currentprofit
+  if balance > tprofit then stop()
+    print ("Anda take PROFIT Bro")
+    print ("TARGET REACHED Bro!!")
+end
+   px = 1.0 ----(Chance Random Decimals)---- 
+   nb = nextbet
+   pi = piloses
+   pa = paloses
+   pp = pploses
+   pb = previousbet
+   if win then
+
+   if (tmpprofit > targets) then
+       -- print("Anda WIN TARGET Bro")
+       --print("Racikan Esce @Phayjoe")
+      --resetstats()
+         tmpprofit = 0
+         chance = maxchance
+         nextbet = basebet
+         if(stopnow) then stop() end
+         if(invprofit  > invtarget ) then
+             invprofit = 0
+             resetpartialprofit()
+         end      
+      else
+         chance  = maxchance -- minuschan
+         nextbet = previousbet*piwinss
+         if(nextbet < basebet) then
+         nextbet = basebet end
+      end
+   else
+      if (currentstreak == -1) then
+          chance  = chance1 -- minuschan
+          nextbet = pb*lossatu
+         if(nextbet < basebet) then 
+      end
+   else     
+         if (currentstreak == -2) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -3) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -4) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -5) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -6) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -7) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -8) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -9) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -10) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -11) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -12) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -13) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -14) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -15) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -16) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -17) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -18) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -19) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -20) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -21) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -22) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -23) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -24) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -25) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -26) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -27) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -28) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -29) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -30) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -31) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -32) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -33) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -34) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -35) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -36) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -37) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -38) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -39) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -40) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -41) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -42) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -43) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -44) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -45) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -46) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -47) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -48) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -49) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -50) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -51) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -52) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -53) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -54) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -55) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -56) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -57) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -58) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -59) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -60) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -61) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -62) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -63) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -64) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -65) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -66) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -67) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -68) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -69) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -70) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -71) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -72) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -73) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -74) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -75) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -76) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -77) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -78) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -79) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -80) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -81) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -82) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -83) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -84) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -85) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -86) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -87) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -88) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -89) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -90) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -91) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -92) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -93) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -94) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -95) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -96) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -97) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -98) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -99) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -100) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -101) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -102) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -103) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -104) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -105) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -106) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -107) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -108) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -109) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -110) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -111) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -112) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -113) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -114) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -115) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -116) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -117) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -118) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -119) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -120) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -121) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -122) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -123) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -124) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -125) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -126) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -127) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -128) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -129) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -130) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -131) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -132) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -133) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -134) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -135) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -136) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -137) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -138) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -139) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -140) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -141) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -142) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -143) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -144) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -145) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -146) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -147) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -148) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -149) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -150) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -151) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -152) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -153) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -154) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -155) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -156) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -157) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -158) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -159) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -160) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -161) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -162) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -163) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -164) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -165) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -166) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -167) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -168) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -169) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -170) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -171) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -172) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -173) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -174) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -175) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -176) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -177) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -178) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -179) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -180) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -181) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -182) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -183) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -184) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -185) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -186) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -187) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -188) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -189) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -190) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -191) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -192) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -193) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -194) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -195) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -196) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -197) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -198) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -199) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -200) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -201) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -202) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -203) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -204) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -205) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -206) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -207) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -208) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -209) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -210) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -211) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -212) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -213) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -214) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -215) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -216) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -217) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -218) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -219) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -220) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -221) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -222) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -223) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -224) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -225) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -226) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -227) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -228) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -229) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -230) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -231) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -232) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -233) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -234) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -235) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -236) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -237) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -238) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -239) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -240) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -241) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -242) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -243) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -244) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -245) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -246) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -247) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -248) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -249) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -250) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -251) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -252) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -253) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -254) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -255) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -256) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -257) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -258) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -259) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -260) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -261) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -262) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -263) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -264) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -265) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -266) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -267) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -268) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -269) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -270) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -271) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -272) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -273) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -274) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -275) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -276) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -277) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -278) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -279) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -280) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -281) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -282) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -283) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -284) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -285) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -286) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -287) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -288) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -289) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -290) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -291) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -292) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -293) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -294) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -295) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -296) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -297) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -298) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -299) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -300) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -301) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -302) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -303) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -304) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -305) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -306) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -307) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -308) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -309) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -310) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -311) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -312) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -313) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -314) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -315) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -316) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -317) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -318) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -319) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -320) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -321) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -322) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -323) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -324) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -325) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -326) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -327) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -328) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -329) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -330) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -331) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -332) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -333) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -334) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -335) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -336) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -337) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -338) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -339) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -340) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -341) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -342) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -343) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -344) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -345) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -346) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -347) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -348) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -349) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -350) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -351) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -352) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -353) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -354) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -355) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -356) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -357) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -358) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -359) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -360) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -361) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -362) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -363) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -364) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -365) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -366) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -367) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -368) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -369) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -370) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -371) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -372) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -373) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -374) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -375) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -376) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -377) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -378) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -379) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -380) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -381) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -382) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -383) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -384) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -385) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -386) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -387) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -388) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -389) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -390) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -391) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -392) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -393) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -394) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -395) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -396) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -397) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -398) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -399) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -400) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -401) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -402) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -403) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -404) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -405) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -406) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -407) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -408) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -409) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -410) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -411) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -412) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -413) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -414) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -415) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -416) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -417) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -418) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -419) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -420) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -421) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -422) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -423) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -424) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -425) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -426) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -427) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -428) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -429) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -430) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -431) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -432) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -433) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -434) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -435) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -436) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -437) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -438) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -439) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -440) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -441) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -442) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -443) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -444) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -445) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -446) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -447) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -448) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -449) then
+             chance  = chance + minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -450) then
+             chance  = chance + minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -451) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -452) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -453) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -454) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -455) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -456) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -457) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -458) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -459) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -460) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -461) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -462) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -463) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -464) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -465) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -466) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -467) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -468) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -469) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -470) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -471) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -472) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -473) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -474) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -475) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -476) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -477) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -478) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -479) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -480) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -481) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -482) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -483) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -484) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -485) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -486) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -487) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -488) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -489) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -490) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -491) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -492) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -493) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -494) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -495) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -496) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -497) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -498) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -499) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -500) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -501) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -502) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -503) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -504) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -505) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -506) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -507) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -508) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -509) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -510) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -511) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -512) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -513) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -514) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -515) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -516) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -517) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -518) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -519) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -520) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -521) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -522) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -523) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -524) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -525) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -526) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -527) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -528) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -529) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -530) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -531) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -532) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -533) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -534) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -535) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -536) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -537) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -538) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -539) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -540) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -541) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -542) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -543) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -544) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -545) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -546) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -547) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -548) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -549) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -550) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -551) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -552) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -553) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -554) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -555) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -556) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -557) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -558) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -559) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -560) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -561) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -562) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -563) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -564) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -565) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -566) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -567) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -568) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -569) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -570) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -571) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -572) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -573) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -574) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -575) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -576) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -577) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -578) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -579) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -580) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -581) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -582) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -583) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -584) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -585) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -586) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -587) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -588) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -589) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -590) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -591) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -592) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -593) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -594) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -595) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -596) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -597) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -598) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak == -599) then
+             chance  = chance - minuschan
+             nextbet = pb*pa
+         end
+         if (currentstreak == -600) then
+             chance  = chance - minuschan
+             nextbet = pb*pp
+         end
+         if (currentstreak <= -601) then
+             chance  = chance - minuschan
+             nextbet = pb*pi
+         end
+         if chance  < minchance then
+             chance = chance2 end
+end
+if balance < recovered then
+    --chance = math.random(chance1*px,chance2*px)/px
+   nextbet = pb * pi
+end 
+  if balance < cutlose then stop()
+    print("Anda Stop LOSE Bro")  
+    print("TARGET REACHED!")
+ end 
+end
+end
