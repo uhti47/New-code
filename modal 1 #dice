@@ -1,0 +1,47 @@
+chance   = 80  
+base     = 0.00000001 
+nextbet  = base  
+sbal     = balance  
+tp       = sbal*0.002  
+chancex  = {9,60}  
+chancex2 = {1,5,2,10,3,5,4,10,5,10,17}  
+chindex  = 1  
+x        = 0  
+inc      = 1  
+function reset()  
+if win and partialprofit > 0 then  
+    chance  = 80  
+    nextbet = base  
+    x       = 0  
+    inc     = 1  
+    resetpartialprofit()  
+end  
+end  
+function dobet()  
+    if win then  
+        x+= currentprofit  
+    else  
+        x-= previousbet  
+        nextbet = previousbet*(1+(chance*0.02))  
+    end  
+      
+    if x < tp then   
+        if !win then  
+            chance  = math.random(chancex[1],chancex[2])  
+            inc     = 1+((chance/100)*1.28)/3  
+            nextbet = previousbet*inc  
+        else  
+            if (chance < 50) then  
+             chance = 80  
+             inc    = 1 + ((chance/100) * 1.12) /3  
+            end  
+            if (chance==80) then  
+                chindex = math.random(1,#chancex2)  
+             chance = (chancex2[chindex])  
+             inc    = (1 + (chance*0.02))     
+            end  
+        end  
+    else  
+        reset()  
+    end  
+end
