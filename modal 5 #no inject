@@ -1,0 +1,65 @@
+basebet = 0.00000004
+
+nextbet = basebet
+
+chance  = 80 
+
+lose    = 0
+
+level   = 0
+
+ 
+function myfib(level)
+
+    fibno=basebet
+
+    temp=0
+
+    prevfibno=0
+
+    if level == 0 then
+
+        fibno= basebet
+
+    else
+
+        for j = 0,level-1,1 do
+
+            temp      = fibno
+
+            fibno     = fibno + prevfibno
+
+            prevfibno = temp
+
+        end
+
+    end
+
+    return fibno    
+
+end
+
+ 
+ 
+function dobet()
+
+    if win then
+
+        level = 0
+
+    else
+
+        level += 1
+
+    end
+
+ 
+    if level < 0 then level = 0 end
+
+ 
+    nextbet = myfib(level)
+
+    chance  = math.random(5,25)
+
+ 
+end
