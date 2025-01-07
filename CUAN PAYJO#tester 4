@@ -1,33 +1,31 @@
 
 --Payjo versi 
 --Kanakamaya: 
-base = 0.01
+base = 0.00025
   
-pilose = 1.85
+pilose = 1.0
   
-palose = 1.85
+palose = 1.5
   
-polose = 1.85
+polose = 1.5
   
-pwin = 0.01
+pwin = 1.0
   
-target = base*0.10001  
+target = base*2000.10001  
   
-opit = 300.1010001  
+opit = base*20.1010001  
   
-lose = 900.1010001  
-  
-speeds = 0.0  
+lose = 90483900.1010001    
   
 --Randomizer--chance-----------------------------  
   
-A1 = 45 B1 = 55  A2 = 1 B2 = 44
+A1 = 98 B1 = 98  A2 = 1 B2 = 44
   
   
   
-A3 = 22 B3 = 35 A4 = 27 B4 = 47 
+A3 = 28 B3 = 29 A4 = 10 B4 = 20
   
-A5 = 10.05 B5 = 21.05 A6 = 0.5 B6 = 35 
+A5 = 0.02 B5 = 5.02 A6 = 0.5 B6 = 20 
   
 --------------------------------------------------  
   
